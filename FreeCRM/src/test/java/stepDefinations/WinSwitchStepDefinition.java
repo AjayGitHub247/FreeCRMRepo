@@ -6,8 +6,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -15,13 +15,13 @@ import cucumber.api.java.en.When;
 
 public class WinSwitchStepDefinition extends AbstractStepDefinition {
 	
-	WebDriver driver = getDriver();
-	
 	public JavascriptExecutor js;
 
 	@Given("^User is on Practice page$")
 	public void user_is_on_Practice_page() throws InterruptedException {
 		
+		System.setProperty("webdriver.chrome.driver", "C://Bin//chromedriver.exe");
+		driver = new ChromeDriver();
 		driver.get("https://learn.letskodeit.com/p/practice");
 		driver.manage().window().maximize();
 		Thread.sleep(3000);
@@ -67,6 +67,12 @@ public class WinSwitchStepDefinition extends AbstractStepDefinition {
 		WebElement nameTxt = driver.findElement(By.id("name"));
 		nameTxt.sendKeys("Ajay Kumar");    
 	}
+	
+	@Then("^Close Browser Window$")
+    public void close_browser_window() throws Throwable {
+		Thread.sleep(3000);
+		driver.quit();
+    }
 	
 	@When("^Scroll to iFrame section$")
     public void scroll_to_iframe_section() throws InterruptedException {
