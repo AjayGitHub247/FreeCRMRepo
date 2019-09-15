@@ -5,7 +5,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtility {
 	
-	static String projectpath;
 	static XSSFWorkbook workbook;
 	static XSSFSheet sheet;
 	
