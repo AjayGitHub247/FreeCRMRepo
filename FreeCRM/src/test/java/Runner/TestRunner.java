@@ -6,11 +6,11 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features="src/test/java/features/WindowSwitch.feature",
+		features="src/test/java/features/ListAndDropDown.feature",
 		glue="stepDefinations",
 		monochrome=true,
 		dryRun=false,
-		tags= {"@Smoke"},
+		tags= {"@SmokeTest"},
 		plugin= {"pretty","html:target/HTMLReport"}
 		)
 
