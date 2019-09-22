@@ -24,7 +24,7 @@ Then Verify the New Deal created with Title and Amount with Maps
 And User Logout from CRM Application
 
 
-@TestTest
+
 Scenario: Create Multiple deal scenario with Maps
 
 Given User is already on login page

@@ -1,5 +1,6 @@
 package stepDefinations;
 
+import java.util.List;
 import java.util.Map;
 
 import org.openqa.selenium.By;
@@ -18,6 +19,14 @@ public class DealMapsStepDefinition extends AbstractStepDefinition {
 	
 	 @Then("^User Enter UserName and Password fields with Maps$")
 	    public void user_enter_username_and_password_fields_with_maps(DataTable Credential) {
+		 
+		 List<Map<String, String>> data1 = Credential.asMaps(String.class, String.class);
+		 
+		 String email = data1.get(0).get("UserName");
+		 System.out.println("The Email ID is: " + email);
+		 
+		 String password = data1.get(0).get("Password");
+		 System.out.println("The Password is: " + password);
 		 
 		 for(Map<String, String> data : Credential.asMaps(String.class, String.class)) {	 
 			 	driver.findElement(By.name("email")).sendKeys(data.get("UserName"));

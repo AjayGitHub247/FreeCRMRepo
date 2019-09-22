@@ -6,11 +6,11 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features="src/test/java/features/ListAndDropDown.feature",
+		features="src/test/java/features/DealMaps.feature",
 		glue="stepDefinations",
 		monochrome=true,
 		dryRun=false,
-		tags= {"@SmokeTest"},
+		tags= {"@TestTest"},
 		plugin= {"pretty","html:target/HTMLReport"}
 		)
 
